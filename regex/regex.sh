@@ -1,3 +1,5 @@
+#!/bin/sh
+
 #Takes the text inside of r0_input.txt and looks for a "<first word>, <second word>" pattern and puts it into an array called groups.
 #It will then output a file r0_output.txt that organizes all found words into the pattern:
 
