@@ -19,3 +19,13 @@ awk 'match($0, /([a-zA-Z]+), ([a-zA-Z]+)/, groups) {print "1. " groups[1] "\n" "
 
 #and will continue this for all found patterns
 awk 'match($0, /I am ([A-Z].+)\. My favorite sandwich is ([a-z]+)\./, groups) {print "1. " groups[1] "\n" "2. " groups[2] "\n" }' < r1_input.txt > r1_output.txt
+
+#Takes the text inside of r2_input.txt and looks for a pattern of "sandwich with <a-zA-Z characters and .'s> <a-z and spaces>" and stores the unknown values into an array called groups.
+#Then, it will output a file r2_output.txt that organizes these found values in the format:
+
+#1. <a-zA-Z characters and .'s>
+#2. <a-z characters and spaces>
+#
+
+#and will continue this for all found patterns
+awk 'match($0, /sandwich with ([a-zA-Z.]+) ([a-z ]+)/, groups) {print "1. " groups[1] "\n" "2. " groups[2] "\n" }' < r2_input.txt > r2_output.txt
